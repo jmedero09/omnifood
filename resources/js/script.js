@@ -54,7 +54,6 @@ $('a[href*="#"]')
       }
     }
   });
-
   //Animations on scroll
   $('.js--wp-1').waypoint(function(){
     $('.js--wp-1').addClass('animated fadeIn');
@@ -78,5 +77,29 @@ $('a[href*="#"]')
     $('.js--wp-4').addClass('animated pulse');
   },{
     offset:'50%'
-  });    
+  });
+
+// Mobile Navigation
+$('.js--nav-icon').click(function(){
+  var nav = $('.js--main-nav');
+  var icon = $('.js--nav-icon i');
+
+  nav.slideToggle(200);
+
+  if(icon.hasClass('ion-navicon-round')){
+    icon.addClass('ion-close-round');
+    icon.removeClass('ion-navicon-round');
+  }else{
+    icon.addClass('ion-navicon-round');
+    icon.removeClass('ion-close-round');
+  }
+//Maps
+    var map = new GMaps({
+      el: '#map',
+      lat: -12.043333,
+      lng: -77.028333
+    });
+
+});
+
 })
